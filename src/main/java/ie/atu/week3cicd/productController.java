@@ -20,6 +20,12 @@ public class productController {
         return productList;
     }
 
+    @PostMapping
+    public product addProduct(@RequestBody product newProduct){
+        productList.add(newProduct);
+        return newProduct;
+    }
+
     @PutMapping("/{id}")
     public product updateProduct(@PathVariable("id") String id, @RequestBody product updatedProduct) {
         for (product prod : productList) {
